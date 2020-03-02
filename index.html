@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audica</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 62.5%;
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 400;
+      }
+
+      h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+      .body {
+        font-size: 1.2rem;
+      }
+    </style>
+    <script src="https://unpkg.com/audica"></script>
+  </head>
+  <body>
+    <div class="body">
+      <section class="top">
+        <div class="heading">
+          <h1>Audica</h1>
+          <h4>Extract your audio frequency/bytetime data to create amazing visualizations</h4>
+        </div>
+        <div class="voice-demo">
+          <div id="voice-demo-vis"></div>
+          <div class="voice-demo-controls">
+            <audio controls id="voice-demo-audio" src="/static/ghost.mp3"></audio>
+            <button id="voice-switch-freq">
+              Show Frequency Data
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="usage">
+        <h2>Example</h2>
+        <div class="usage-code">
+          <pre>
+            <code>
+              const myAudica = audica({
+                element: document.getElementById('my-audio-or-video-element')
+                size: 256,
+                dataType: 'time' // or 'hz' for frequency
+              });
+
+              const loop = () => {
+                window.requestAnimationFrame(loop);
+
+                const data = myAudica.getData();
+
+                for (let i = 0; i < 256; i++) {
+                  // data is an array (length 256) of integers
+                  // it contains byte time data to show
+                  // an audio wave.
+
+                  // Setting "dataType" to "hz" returns frequency data instead.
+                  // This allows you to measure Bass/Mid/Treble values in the array,
+                  // with the first values being more bass, and last values being treble
+
+                }
+              }
+            </code>
+          </pre>
+        </div>
+      </section>
+      <section class="install">
+        <h2>Install via unpkg</h2>
+        <pre>
+          <code>
+            &lt;script src="https://unpkg.com/audica"&gt;&lt;/script&gt;
+
+          </code>
+        </pre>
+
+      </section>
+    </div>
+  </body>
+  <script src="/static/script.js"></script>
+  <script>
+    // IMPORTANT: Make sure This script tag is the very last <script> tag in this file!
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+    ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+</html>

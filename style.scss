@@ -1,0 +1,62 @@
+.body {
+  width: 100vw;
+  position: relative;
+  background-color: #000;
+}
+
+.top {
+  h1 {
+    padding-top: 3rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 100;
+  }
+  #voice-demo-vis {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    transform: rotate(180deg) scaleX(-1);
+  }
+
+  .voice-demo-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+  button {
+    height: 5rem;
+    width: 9rem;
+    margin: 0 auto;
+  }
+
+  #voice-data-viewer {
+    width: 100%;
+  }
+}
+
+.usage, .install {
+  margin-top: 3rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  pre {
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 100%;
+    background-color: navy;
+  }
+}
+
